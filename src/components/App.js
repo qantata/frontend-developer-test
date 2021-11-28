@@ -7,7 +7,7 @@ import { css } from "@emotion/css";
 
 export const App = () => {
   return (
-    <Container className="app" fixed>
+    <Container fixed>
       <Box data-testid="app-box" m={2}>
         <div
           className={css`

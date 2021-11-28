@@ -67,7 +67,7 @@ export const Table = ({ type }) => {
   ];
 
   return (
-    <div style={{ height: 400, width: "100%" }}>
+    <div style={{ height: 400, width: "100%" }} data-testid="table">
       <DataGrid
         rows={data}
         columns={columns}
@@ -92,10 +92,18 @@ export const Table = ({ type }) => {
 
         {isFetching && <CircularProgress />}
         {isError && (
-          <Typography variant="p" style={{ color: "red" }}>
+          <Typography
+            variant="p"
+            style={{ color: "red" }}
+            data-testid="error-msg"
+          >
             We had problems fetching your data. Please try again.
           </Typography>
         )}
+
+        <Typography data-testid="nr-items">
+          There are {data.length} items
+        </Typography>
       </div>
     </div>
   );

@@ -1,17 +1,12 @@
-import React from 'react';
-import { shallow } from 'enzyme';
-import { App } from './App';
+import React from "react";
+import { render } from "@testing-library/react";
+import { App } from "./App";
 
-describe('<App />', () => {
-  let wrapper;
-
-  beforeEach(() => {
-    wrapper = shallow(<App />);
-  });
-
-  describe('render()', () => {
-    it('renders the Box', () => {
-      expect(wrapper.find({ 'data-testid': 'app-box' })).toHaveLength(1);
+describe("<App />", () => {
+  describe("render()", () => {
+    it("renders the Box", () => {
+      const component = render(<App />);
+      expect(component.findByTestId("app-box")).toBeTruthy();
     });
   });
 });
