@@ -3,11 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "4.9.5",
-    "@material-ui/icons": "4.9.1",
-    "react": "16.13.0",
-    "react-dom": "16.13.0",
-    "react-scripts": "3.4.0"
+    "@emotion/css": "^11.5.0",
+    "@emotion/react": "^11.7.0",
+    "@emotion/styled": "^11.6.0",
+    "@mui/material": "^5.2.1",
+    "@mui/x-data-grid": "^5.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^4.0.3"
+  },
+  "devDependencies": {
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16": "1.15.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -29,9 +36,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "enzyme": "3.11.0",
-    "enzyme-adapter-react-16": "1.15.2"
   }
 }
