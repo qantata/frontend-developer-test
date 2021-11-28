@@ -1,24 +1,32 @@
-import React from 'react';
-import api from '../lib/api';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
-import Box from '@material-ui/core/Box';
-
-const fetchData = async () => {
-  const result = await api.getUsersDiff();
-  console.log(result);
-};
+import React from "react";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
+import { Table } from "./Table.js";
+import { css } from "@emotion/css";
 
 export const App = () => {
   return (
     <Container className="app" fixed>
       <Box data-testid="app-box" m={2}>
-        <Typography>Your app should show up here.</Typography>
-        {/* Just a dummy fetcher to show how the api should be used, this should be removed */}
-        <Button variant="contained" color="primary" onClick={fetchData}>
-          Test data fetch
-        </Button>
+        <div
+          className={css`
+            display: flex;
+            flex-direction: column;
+            gap: 128px;
+            margin-bottom: 256px;
+          `}
+        >
+          <div>
+            <Typography variant="h3">Users</Typography>
+            <Table type="User" />
+          </div>
+
+          <div>
+            <Typography variant="h3">Projects</Typography>
+            <Table type="Project" />
+          </div>
+        </div>
       </Box>
     </Container>
   );
